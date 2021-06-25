@@ -2,7 +2,7 @@
 
 thunderbird "$@" &
 
-while ! wmctrl -l | grep -q Thunderbird; do sleep 1; done
+until wmctrl -l | grep -q Thunderbird; do sleep 1; done
 
 wid=$(wmctrl -l | grep Thunderbird | awk '{print $1;}')
 
